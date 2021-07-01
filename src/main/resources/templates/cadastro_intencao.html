@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="widthdevice-width" />
+<title>Home</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet" />
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+	rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+
+			<h1 class="display-4">Intenção de financiamento</h1>
+		</div>
+	<div class="panel panel-default" style="margin: 5px">
+		<div class="panel-body">
+		
+			<form th:object="${FinanEntity}" th:action="@{/salvar}" method="post">		
+
+			<div class="form-row">
+				<div class="col-md-8 mb-3">
+					<label for="validationCustom">Cliente</label> <input type="text"
+						class="form-control" id="cliente" placeholder="Nome do cliente" name="cliente"
+						required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationCustom">Endereço</label> <input type="text"
+						class="form-control" id="endereco" name="endereco"
+						placeholder="Endereço" required>
+				</div>
+				<div class="col-md-2 mb-3">
+					<label for="validationCustom">Nº</label> <input type="number"
+						class="form-control" id="numero" placeholder="Número" name="numero"
+						required>
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Cidade</label> <input type="text"
+						class="form-control" id="cidade" placeholder="Cidade" name="cidade"
+						required>
+				</div>
+				
+				<div class="col-md-1 mb-3">
+					<label for="validationCustom">Estado</label> <select
+						id="estado" class="custom-select" name="estado" required>
+						<option selected></option>
+						<option value="AC">AC</option>
+						<option value="AL">AL</option>
+						<option value="AP">AP</option>
+						<option value="AM">AM</option>
+						<option value="BA">BA</option>
+						<option value="CE">CE</option>
+						<option value="DF">DF</option>
+						<option value="ES">ES</option>
+						<option value="GO">GO</option>
+						<option value="MA">MA</option>
+						<option value="MT">MT</option>
+						<option value="MS">MS</option>
+						<option value="MG">MG</option>
+						<option value="PA">PA</option>
+						<option value="PB">PB</option>
+						<option value="PR">PR</option>
+						<option value="PE">PE</option>
+						<option value="PI">PI</option>
+						<option value="RJ">RJ</option>
+						<option value="RN">RN</option>
+						<option value="RS">RS</option>
+						<option value="RO">RO</option>
+						<option value="RR">RR</option>
+						<option value="SC">SC</option>
+						<option value="SP">SP</option>
+						<option value="SE">SE</option>
+						<option value="TO">TO</option>
+					</select>
+
+				</div>
+				<div class="col-md-2 mb-3">
+					<label for="validationCustom">CEP</label> <input type="text"
+						class="form-control" id="cep" name="cep"
+						placeholder="Ex.: 00000-000" required>
+
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationCustom">CPF</label> <input type="text"
+						class="form-control" id="cpf" name="cpf"
+						placeholder="Ex.: 000.000.000-00" required>
+
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationCustom">RG</label> <input type="text"
+						class="form-control" id="rg" placeholder="00.000.000-0" name="rg"
+						required>
+
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationCustom">Data de nascimento</label> <input
+						type="date" class="form-control" id="datanas" name="datanas"
+						placeholder="Ex.: 00/00/0000" required>
+
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-6 mb-3">
+					<label for="validationCustom">E-mail</label> <input type="email"
+						class="form-control" id="email" placeholder="E-mail" name="email"
+						required>
+
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Telefone residencial</label> <input
+						type="text" class="form-control" id="telres" name="telres"
+						placeholder="Ex.: (00) 0000-0000" required>
+
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Celular</label> <input type="text"
+						class="form-control" id="cel" name="cel"
+						placeholder="Ex.: (00) 00000-0000" required>
+
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Tipo do financiamento</label> <select
+						class="custom-select" name="tipofinan" id="tipofinan" required>
+						<option selected></option>
+						<option value="Automobilístico">Automobilístico</option>
+						<option value="Imobiliário">Imobiliário</option>
+						<option value="Maquinário">Maquinário</option>
+					</select>
+
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Quantidade do parcelamento</label> <input
+						type="text" class="form-control" id="qtdepar"
+						placeholder="" name="qtdepar" required>
+
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Valor da intenção</label> <input
+						type="text" class="form-control" id="valorint"
+						placeholder="R$" name="valorint"  required>
+
+				</div>
+				<div class="col-md-3 mb-3">
+					<label for="validationCustom">Salário</label> <input type="text"
+						class="form-control" id="sal" name="sal" placeholder="R$" 
+						required>
+
+				</div>
+			</div>
+				
+				<div class="mb-3 col-lg-13" style="text-align: right">
+				<button type="submit" class="btn btn-primary">Salvar</button>
+				</div>
+				
+			</form>
+			</div>
+</div>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}">
+		
+	</script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}">
+		
+	</script>
+</body>
+</html>
